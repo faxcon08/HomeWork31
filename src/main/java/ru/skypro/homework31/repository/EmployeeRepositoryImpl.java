@@ -28,12 +28,12 @@ public class EmployeeRepositoryImpl implements EmployeeRepository{
 
     @Override
     public String getMinSalary() {
-        return "Min salary= "+employeesList.stream().map(x->x.getSalary()).mapToInt(y->y.intValue()).min();
+        return "Min salary = "+employeesList.stream().map(x->x.getSalary()).mapToInt(y->y.intValue()).min().orElse(0);
     }
 
     @Override
     public String getMaxSalary() {
-        return "MAX salary= "+employeesList.stream().map(x->x.getSalary()).mapToInt(y->y.intValue()).max();
+        return "MAX salary = "+employeesList.stream().map(x->x.getSalary()).mapToInt(y->y.intValue()).max().orElse(0);
     }
 
     @Override
